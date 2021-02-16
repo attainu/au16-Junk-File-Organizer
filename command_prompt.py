@@ -19,3 +19,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     sys.stdout.write(run(args))
+
+# python command_prompt.py -d "C:\Users\Vibhor Verma\Desktop\testing" -o "extension"
