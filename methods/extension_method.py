@@ -22,7 +22,6 @@ class OrganiseFilesWithExtension():
         files = os.listdir(path)
         for file in files:
             try:
-                print(file)
                 extension = file.split('.')[1]
 
                 if extension not in self.list_of_extensions:
@@ -36,7 +35,6 @@ class OrganiseFilesWithExtension():
                 deploy.checkAndMove()
                 
             except:
-                print("folder")
                 if file not in self.list_of_extensions:
                     new_path = path + '\\' + file
                     self.organise(new_path)
