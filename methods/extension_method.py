@@ -1,6 +1,7 @@
 from commands.commands_class import Commands
 import os
 
+
 class OrganiseFilesWithExtension():
     def __init__(self):
         self.list_of_extensions = ["html5","html", "htm", "xhtml", "jpeg", "jpg",
@@ -18,12 +19,12 @@ class OrganiseFilesWithExtension():
                                     "txt", "in", "out", "pdf", "py", "xml", "exe", "sh"
                                     ]
 
-    def organise(self, path):
+
+    def extensionSort(self, path):
         files = os.listdir(path)
         for file in files:
             try:
                 extension = file.split('.')[1]
-
                 if extension not in self.list_of_extensions:
                     self.list_of_extensions.append(extension)
 
@@ -37,7 +38,7 @@ class OrganiseFilesWithExtension():
             except:
                 if file not in self.list_of_extensions:
                     new_path = path + '\\' + file
-                    self.organise(new_path)
+                    self.extensionSort(new_path)
                 
                 else:
                     continue

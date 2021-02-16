@@ -1,3 +1,5 @@
+from methods.last_modified_method import OrganiseFilesWithLastModified
+from methods.size_method import OrganiseFilesWithSize
 from methods.extension_method import OrganiseFilesWithExtension
 
 
@@ -10,14 +12,16 @@ class OrganiseMethod():
 
     def selection(self, method):
         if method == 'extension':
-            call_method = OrganiseFilesWithExtension()
-            call_method.organise(self.path)   
+            call_extension_method = OrganiseFilesWithExtension()
+            call_extension_method.extensionSort(self.path)   
         
         elif method == 'size':
-            pass
+            call_size_method = OrganiseFilesWithSize()
+            call_size_method.sizeSort(self.path)
         
-        elif method == 'last_used':
-            pass
+        elif method == 'last_modified':
+            call_last_modified_method = OrganiseFilesWithLastModified()
+            call_last_modified_method.lastModifiedSort(self.path)
         
         else:
             pass
