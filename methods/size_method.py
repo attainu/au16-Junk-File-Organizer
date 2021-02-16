@@ -29,8 +29,6 @@ class OrganiseFilesWithSize():
                     continue
 
 
-
-
     def assignDestination(self, path, source):
         size = os.stat(source).st_size
 

@@ -30,9 +30,7 @@ class OrganiseFilesWithLastModified():
     def assignDestination(self, path, source):
         current_time = int(time.time())
         last_modified_time = int(os.stat(source).st_mtime)
-        difference = current_time - last_modified_time
-        
-        print(current_time, last_modified_time, difference)        
+        difference = current_time - last_modified_time      
         
         if difference < 60:
             return path + "\\" + self.last_modified_chart[0]
