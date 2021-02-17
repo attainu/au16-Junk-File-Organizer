@@ -1,6 +1,6 @@
 import os, shutil
 
-class Commands:
+class Commands():
     def __init__(self, source, destination, duplicate):
         self.source = source
         self.destination = destination
@@ -8,17 +8,15 @@ class Commands:
 
     def checkAndMove(self):
         if os.path.exists(self.destination):   
-            self.check()               
-        
+            self.checkDuplicate()               
         else:
             self.create()
             self.move()
     
     
-    def check(self):
+    def checkDuplicate(self):
         if os.path.exists(self.duplicate):
             self.delete()
-
         else:
             self.move()
     

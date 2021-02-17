@@ -13,16 +13,16 @@ class OrganiseFilesWithSize():
             try:
                 extension = file.split('.')[1]
                 if extension:
-                    source = path + "\\" + file
+                    source = os.path.join(path, file)
                     destination = self.assignDestination(path, source)
-                    duplicate = destination + "\\" + file
+                    duplicate = os.path.join(destination, file)
 
                     deploy = Commands(source, destination, duplicate)
                     deploy.checkAndMove()    
 
             except:
                 if file not in self.size_chart:
-                    new_path = path + '\\' + file
+                    new_path = os.path.join(path, file)
                     self.sizeSort(new_path)
                 
                 else:
@@ -33,13 +33,13 @@ class OrganiseFilesWithSize():
         size = os.stat(source).st_size
 
         if size < 1024:
-            return path + "\\" + self.size_chart[0] 
+            return os.path.join(path, self.size_chart[0])
 
         elif size >= 1024 and size < 1048576:
-            return path + "\\" + self.size_chart[1] 
+            return os.path.join(path, self.size_chart[1])
 
         elif size >= 1048576 and size < 1073741824:
-            return path + "\\" + self.size_chart[2] 
+            return os.path.join(path, self.size_chart[2])
 
         else:
-            return path + "\\" + self.size_chart[3] 
+            return os.path.join(path, self.size_chart[3])

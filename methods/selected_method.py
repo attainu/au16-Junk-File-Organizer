@@ -1,3 +1,4 @@
+from methods.recently_used_method import OrganiseFilesWithRecentlyUsed
 from methods.last_modified_method import OrganiseFilesWithLastModified
 from methods.size_method import OrganiseFilesWithSize
 from methods.extension_method import OrganiseFilesWithExtension
@@ -23,5 +24,9 @@ class OrganiseMethod():
             call_last_modified_method = OrganiseFilesWithLastModified()
             call_last_modified_method.lastModifiedSort(self.path)
         
+        elif method == 'recently_used':
+            call_recently_used_method = OrganiseFilesWithRecentlyUsed()
+            call_recently_used_method.recentlyUsedSort(self.path)
+
         else:
             pass

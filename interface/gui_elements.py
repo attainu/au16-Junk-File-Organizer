@@ -18,7 +18,7 @@ class GuiFormElements():
         method_label = ttk.Label(user_entry, text = "Organize Method:")
         method_label.pack(fill = 'x', expand = True, pady = 10)
         
-        methods = ('extension', 'size', 'last_modified')
+        methods = ('extension', 'size', 'last_modified', 'recently_used')
         month_cb = ttk.Combobox(user_entry, textvariable = self.method)
         month_cb['values'] = methods
         month_cb['state'] = 'readonly'  
