@@ -5,7 +5,10 @@ import time
 
 class OrganiseFilesWithRecentlyUsed():
     def __init__(self):
-        self.recently_used_chart = ["last_week", "last_month", "6_months_ago", "years_ago"]
+        self.recently_used_chart = ["last_week"]
+        self.recently_used_chart.append("last_month")
+        self.recently_used_chart.append("6_months_ago")
+        self.recently_used_chart.append("years_ago")
 
     def recentlyUsedSort(self, path):
         files = os.listdir(path)
@@ -19,8 +22,8 @@ class OrganiseFilesWithRecentlyUsed():
 
                     deploy = Commands(source, destination, duplicate)
                     deploy.checkAndMove()
-                    
-            except:
+
+            except IndexError:
                 if file not in self.recently_used_chart:
                     new_path = os.path.join(path, file)
                     self.recentlyUsedSort(new_path)
@@ -29,18 +32,17 @@ class OrganiseFilesWithRecentlyUsed():
 
     def assignDestination(self, path, source):
         current_time = int(os.stat(os.path.join(source)).st_atime)
-        recently_used_time = int(time.time()) 
+        recently_used_time = int(time.time())
         recently_used_time = (recently_used_time - current_time) // 3600
 
         if recently_used_time <= 168:
             return os.path.join(path, self.recently_used_chart[0])
 
         elif recently_used_time <= 5040:
-           return os.path.join(path, self.recently_used_chart[1])
+            return os.path.join(path, self.recently_used_chart[1])
 
         elif recently_used_time <= 30240:
             return os.path.join(path, self.recently_used_chart[2])
 
         else:
-           return os.path.join(path, self.recently_used_chart[3])
-        
+            return os.path.join(path, self.recently_used_chart[3])

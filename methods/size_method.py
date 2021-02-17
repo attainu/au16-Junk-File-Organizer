@@ -4,8 +4,7 @@ import os
 
 class OrganiseFilesWithSize():
     def __init__(self):
-        self.size_chart = ["Bytes", "KiloBytes", "Megabytes", "GigaBytes"] 
-
+        self.size_chart = ["Bytes", "KiloBytes", "Megabytes", "GigaBytes"]
 
     def sizeSort(self, path):
         files = os.listdir(path)
@@ -18,16 +17,14 @@ class OrganiseFilesWithSize():
                     duplicate = os.path.join(destination, file)
 
                     deploy = Commands(source, destination, duplicate)
-                    deploy.checkAndMove()    
+                    deploy.checkAndMove()
 
-            except:
+            except IndexError:
                 if file not in self.size_chart:
                     new_path = os.path.join(path, file)
                     self.sizeSort(new_path)
-                
                 else:
                     continue
-
 
     def assignDestination(self, path, source):
         size = os.stat(source).st_size

@@ -19,8 +19,8 @@ class OrganiseFilesWithLastModified():
 
                     deploy = Commands(source, destination, duplicate)
                     deploy.checkAndMove()
-                    
-            except:
+
+            except IndexError:
                 if file not in self.last_modified_chart:
                     new_path = os.path.join(path, file)
                     self.lastModifiedSort(new_path)
@@ -30,9 +30,11 @@ class OrganiseFilesWithLastModified():
     def assignDestination(self, path, source):
         current_time = os.path.getmtime(os.path.join(source))
         last_modified_time = time.ctime(current_time)
-        mm_yy = last_modified_time[4:7] + "-" + last_modified_time[20:24]    
-        
+
+        mm_yy = last_modified_time[4:7]
+        mm_yy += "-" + last_modified_time[20:24]
+
         if mm_yy not in self.last_modified_chart:
             self.last_modified_chart.append(mm_yy)
-        
+
         return os.path.join(path, mm_yy)
