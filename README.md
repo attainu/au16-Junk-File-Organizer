@@ -1,6 +1,7 @@
                                                # JUNK FILE Organiser #
 
-### File-Organiser: Arranging files on your computer is just like arranging anything else. Say you want to organize your clothes. 
+### File-Organiser: 
+		    Arranging files on your computer is just like arranging anything else. Say you want to organize your clothes. 
                     You might arrange each type of clothes into separate stacks or you could throw everything into one place and 
                     hope you can find the right pair of clothes when you need it and that's how we typically treat our files: 
                     we save files randomly to our Desktop and Documents folders, then waste time searching for files every day.
@@ -47,20 +48,6 @@
    		  3) python command_prompt.py -d "path" -o "last_modified"
 
   		  4) python command_prompt.py -d "path" -o "recently_used"
-
-
-### Screenshots:
-		  - Before running the script:
-		    ![](Screenshot_1.png)
-
-                  - After running the script according to the extension:
-		    ![](Screenshot_10.png)
-
-		  - After running the script according to the Last modified:
-		    ![](Screenshot_2.png)
-
-		  - After running the script according to the file size:
-		    ![](Screenshot_3.png)
 
 
 
