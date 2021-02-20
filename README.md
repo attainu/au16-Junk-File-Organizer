@@ -1,6 +1,6 @@
                                                # JUNK FILE Organiser #
 
-### File-Organiser: 
+### Introduction: 
 		    Arranging files on your computer is just like arranging anything else. Say you want to organize your clothes. 
                     You might arrange each type of clothes into separate stacks or you could throw everything into one place and 
                     hope you can find the right pair of clothes when you need it and that's how we typically treat our files: 
