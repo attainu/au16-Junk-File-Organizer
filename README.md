@@ -1,7 +1,7 @@
-                                               # JUNK FILE Organiser #
+                                                   # JUNK FILE Organiser #
 
 ### Introduction: 
-		    Arranging files on your computer is just like arranging anything else. Say you want to organize your clothes. 
+		           Arranging files on your computer is just like arranging anything else. Say you want to organize your clothes. 
                     You might arrange each type of clothes into separate stacks or you could throw everything into one place and 
                     hope you can find the right pair of clothes when you need it and that's how we typically treat our files: 
                     we save files randomly to our Desktop and Documents folders, then waste time searching for files every day.
@@ -23,7 +23,7 @@
 
 
 ### Requirements:
-                 - usage of os module
+             - usage of os module
 		 - usage of shutil module
 		 - usage of tkinter module
 		 - usage of time module
@@ -33,7 +33,7 @@
 
 ### How to run:
 		 - run the junk_file_organizer.exe : The GUI window will ask you for the path of the directory which you want
-    				    		     to organise as per the selected method i.e. (extension, size, last modified,
+    				    		to organise as per the selected method i.e. (extension, size, last modified,
 				  		     recently used, etc.
 
 		 - run the command_prompt.py script : It works as a command line parser and will organise the file based on the 
